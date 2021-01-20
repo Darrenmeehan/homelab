@@ -1,0 +1,26 @@
+---
+# NOTES
+
+# Server side
+#
+# Install -
+# apt update
+# apt install apt-cacher-ng - Displays a config
+#
+# Allow https passthrough -
+# vim /etc/apt-cacher-ng/acng.conf
+# Uncomment - PassThroughPattern: .* # this would allow CONNECT to everything
+#
+# Restart server
+
+# Client side
+#
+# echo 'Acquire::http::Proxy "http://<apt-cacher-ng-ip>:3142";' > /etc/apt/apt.conf.d/00aptproxy
+# FIXME - Consider timeout side
+# FIXME - Consider line for https
+
+# Output
+# http://<apt-cacher-ng-ip>:3142/acng-report.html
+
+# References
+# https://kifarunix.com/install-and-configure-apt-caching-server-using-apt-cacher-ng-on-ubuntu-20-04/
