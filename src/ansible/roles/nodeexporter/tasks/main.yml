@@ -1,0 +1,23 @@
+---
+- name: Create node_exporter cert dir
+  file:
+    path: "/etc/node_exporter"
+    state: directory
+    owner: root
+    group: root
+  become: yes
+- openssl_privatekey:
+    path: /etc/node_exporter/private.pem
+    size: 8096
+  become: yes
+- openssl_csr:
+    path: /etc/node_exporter/csr.pem
+    privatekey_path: /etc/node_exporter/private.pem
+  become: yes
+- name: Create cert and key
+  openssl_certificate:
+    csr_path: /etc/node_exporter/csr.pem
+    path: /etc/node_exporter/certificate.pem
+    privatekey_path: /etc/node_exporter/private.pem
+    provider: selfsigned
+  become: yes

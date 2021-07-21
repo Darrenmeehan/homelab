@@ -1,0 +1,36 @@
+---
+# tasks file for rust
+# FIXME Only works for Ubuntu
+
+- name: Install dependencies
+  package:
+    name:
+      - libssl-dev
+      - pkg-config
+      - postgresql-client-common # Needed for zero2prod
+      - postgresql-client-12
+      - build-essential
+    state: latest
+  become: yes
+
+- name: Install rustup
+  shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+- name: Install sqlx-cli
+  shell: cargo install --locked --version={{ sqlx_version }} sqlx-cli --no-default-features --features postgres
+
+- name: Install cargo-edit
+  shell: cargo install cargo-edit
+
+
+  # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/uri_module.html
+# Needed for zero2prod
+
+# I cloned my repo which was already available online at
+
+# Though I needed to install `sqlx`.
+
+# ```
+# cargo install --locked --version=0.5.1 sqlx-cli --no-default-features --features postgres
+# ```

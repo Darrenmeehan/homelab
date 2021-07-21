@@ -1,0 +1,23 @@
+---
+- name: "homelab Ansible playbook"
+  hosts: 127.0.0.1
+  connection: local
+  # tasks:
+  # pre_tasks:
+  roles:
+    - nodeexporter
+    - cloudalchemy.node_exporter
+    - applications
+    - rust
+    - personalrepos
+    - dotfiles
+    - docker
+    - archivebox
+  vars:
+    node_exporter_tls_server_config:
+      cert_file: /etc/node_exporter/certificate.pem
+      key_file: /etc/node_exporter/private.pem
+    node_exporter_basic_auth_users:
+      randomuser: examplepassword 
+  # - name: Install required roles
+  #   local_action: command ansible-galaxy install geerlingguy.postgresql cloudalchemy.node_exporter

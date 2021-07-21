@@ -1,0 +1,31 @@
+---
+# tasks file for dotfiles
+  # - https://github.com/Darrenmeehan/dotfiles
+- name: Checkout dotfiles configuration
+  ansible.builtin.git:
+    repo: "{{ dotfiles_repository }}"
+    dest: /home/darren/dotfiles
+    update: yes
+    force: no
+    bare: no
+
+# FIXME This repository is too large
+# Download on MacOS using font-sauce-code-pro-nerd-font
+# Need to find Linux option...
+# - name: Checkout fonts repo
+#   ansible.builtin.git:
+#     repo: https://github.com/ryanoasis/nerd-fonts.git
+#     dest: /home/darren/.nerd-fonts
+#     update: yes
+#     force: no
+#     bare: no
+#     single_branch: yes
+#     depth: 1
+
+# FIXME Set default shell?
+# FIXME Add to rc file
+# FIXME Check it all works?? Somehow?
+
+# FIXME vimrc
+# FIXME tmuxrc
+# FIXME ssh config

@@ -1,0 +1,27 @@
+---
+- name: "Setup Pulp Server"
+  hosts: 127.0.0.1
+  connection: local
+  vars:
+    pulp_settings:
+      secret_key: "6}$BS%bjzhvk+sDa"
+      content_origin: "http://"
+    pulp_default_admin_password: "8gpJ$,?3v'A6R_#z"
+    pulp_install_plugins:
+      # galaxy-ng: {}
+      # pulp-ansible: {}
+      # pulp-certguard: {}
+      pulp-container: {}
+      # pulp-cookbook: {}
+      pulp-deb: {}
+      # pulp-file: {}
+      # pulp-gem: {}
+      # pulp-maven: {}
+      # pulp-npm: {}
+      # pulp-python: {}
+      pulp-rpm: {}
+  roles:
+    - pulp.pulp_installer.pulp_all_services
+  environment:
+    DJANGO_SETTINGS_MODULE: pulpcore.app.settings
+

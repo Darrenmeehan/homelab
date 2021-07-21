@@ -1,0 +1,27 @@
+---
+# tasks file for personalrepos
+- name: Create code directory
+  file:
+    path: /home/{{ username }}/code
+    state: directory
+    owner: darren
+    modification_time: preserve
+    access_time: preserve
+
+- name: Create code directory
+  file:
+    path: /home/{{ username }}/code/testing
+    state: directory
+    owner: darren
+    modification_time: preserve
+    access_time: preserve
+
+# FIXME How to add in repository names?
+- name: Checkout GitHub repository {{ github_username }}
+  git:
+    name: https://github.com/{{ github_username }}/{{ item }}
+    dest: /home/{{ username }}/code/{{ item }}
+  loop:
+    - zero2prod
+    - hello-word-rust-lambda
+    - terraform-provider-proxmox

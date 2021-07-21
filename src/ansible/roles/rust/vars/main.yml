@@ -1,0 +1,7 @@
+---
+# vars file for rust
+rust_versions:
+  - nightly
+  - 1.51
+  - 1.51
+sqlx_version: 0.5.1

@@ -1,0 +1,9 @@
+---
+
+- name: Install utilies
+  package:
+    name:
+      - tree
+      - shellcheck
+    state: latest
+  become: yes

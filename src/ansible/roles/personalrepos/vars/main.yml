@@ -1,0 +1,12 @@
+---
+# vars file for personalrepos
+# FIXME Set higher up
+username: darren
+# FIXME I'd prefer to use the GitHub url, but I want to
+# clone into a directory with the repo name
+github_username: Darrenmeehan
+github_repository_names:
+  - zero2prod
+  - hello-word-rust-lambda
+  - terraform-provider-proxmox
+  # FIXME Currently empty - scones-ie
