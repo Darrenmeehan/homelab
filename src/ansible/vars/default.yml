@@ -1,14 +1,12 @@
 ---
-name: Darren Meehan
-shortname: Darren
-user: darren
-# FIXME I'd prefer to use the GitHub url, but I want to
-# clone into a directory with the repo name
-github_username: Darrenmeehan
-github_repository_names:
-  - zero2prod
-  - hello-word-rust-lambda
-  - terraform-provider-proxmox
-  # FIXME Currently empty - scones-ie
-dotfiles_repository: https://github.com/Darrenmeehan/dotfiles
-# qmk_repository: 
+
+utilities:
+  - tree
+  - shellcheck
+
+rust_dependancies:
+  - libssl-dev
+  - pkg-config
+  - postgresql-client-common # Needed for zero2prod
+  - postgresql-client-12
+  - build-essential

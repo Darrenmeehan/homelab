@@ -1,0 +1,14 @@
+---
+
+utilities:
+  - tree
+  - ShellCheck
+
+rust_dependancies:
+  - openssl-devel
+  - cmake
+  - "@Development Tools"
+  # - pkg-config
+  # - postgresql-client-common # Needed for zero2prod
+  # - postgresql-client-12
+  # - build-essential

@@ -13,6 +13,9 @@
     - dotfiles
     - docker
     - archivebox
+  vars_files:
+      - "vars/common.yml"
+      - [ "vars/{{ ansible_facts['distribution'] | lower }}.yml", "vars/os_defaults.yml" ]
   vars:
     node_exporter_tls_server_config:
       cert_file: /etc/node_exporter/certificate.pem
