@@ -1,6 +1,6 @@
 ---
 
-- name: Install utilies
+- name: Install utilities
   package:
     name:
       - tree
