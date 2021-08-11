@@ -17,7 +17,7 @@
 
 #FIXME This doesnt work first time despite above comand working...
 - name: Install sqlx-cli
-  shell: cargo install --locked --version={{ sqlx_version }} sqlx-cli --no-default-features --features postgres
+  shell: cargo install --locked --version={{ sqlx_cli_version }} sqlx-cli --no-default-features --features postgres
 
 - name: Install cargo-edit
   shell: cargo install cargo-edit
