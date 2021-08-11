@@ -4,13 +4,9 @@
 
 - name: Install dependencies
   package:
-    name:
-      - libssl-dev
-      - pkg-config
-      - postgresql-client-common # Needed for zero2prod
-      - postgresql-client-12
-      - build-essential
+    name: "{{ item }}"
     state: latest
+  loop: "{{ rust_dependancies }}"
   become: yes
 
 - name: Install rustup
