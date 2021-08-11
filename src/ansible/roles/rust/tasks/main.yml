@@ -12,6 +12,10 @@
 - name: Install rustup
   shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
+- name: Setup cargo on current shell
+  shell: source {{ lookup('env','HOME') }}/.cargo/env
+
+#FIXME This doesnt work first time despite above comand working...
 - name: Install sqlx-cli
   shell: cargo install --locked --version={{ sqlx_version }} sqlx-cli --no-default-features --features postgres
 
