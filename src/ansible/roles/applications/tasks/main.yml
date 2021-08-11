@@ -2,8 +2,7 @@
 
 - name: Install utilities
   package:
-    name:
-      - tree
-      - shellcheck
+    name: "{{ item }}"
     state: latest
   become: yes
+  loop:  "{{ utilities }}"
