@@ -11,7 +11,7 @@
     - rust
     - personalrepos
     - dotfiles
-    - docker
+    - { role: docker, when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu' }
     - archivebox
   vars_files:
       - "vars/common.yml"
