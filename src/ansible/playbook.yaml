@@ -6,7 +6,7 @@
   # pre_tasks:
   roles:
     - nodeexporter
-    - cloudalchemy.node_exporter
+    # - cloudalchemy.node_exporter
     - applications
     - rust
     - personalrepos
