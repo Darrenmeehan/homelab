@@ -23,4 +23,10 @@ ansible-playbook --connection=local playbook.yaml -v --ask-become-pass
 
 ## Adding a new role
 
-Use built in ansible-galaxy tool to create a new role.
+Use `ansible-galaxy` tool to create a new role.
+This tool comes with `ansible` - FIXME which pip package does it come with?
+
+```commandline
+cd src/ansible/roles
+ansible-galaxy role init <role_name>
+```
