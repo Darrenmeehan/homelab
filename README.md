@@ -2,7 +2,14 @@
 
 Software to setup my homelab.
 
-## What is a homelab?
+## Usage
+
+Some tools are required to bootstrap use of this Ansible playbook.
+
+```shell
+pip install ansible-core
+pip install ansible
+```
 
 ## Proxmox
 
