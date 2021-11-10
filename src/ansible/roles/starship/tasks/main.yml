@@ -1,0 +1,26 @@
+---
+
+- name: Ensure ~/.config exists
+  ansible.builtin.file:
+    path: /home/{{ user }}/.config
+    state: directory
+
+- name: Add configuration file for Starship
+  ansible.builtin.copy:
+    src: starship.toml
+    dest: /home/{{ user }}/.config/starship.toml
+    mode: 0600
+
+- name: Ensure ~/.profile.d exists
+  ansible.builtin.file:
+    path: /home/{{ user }}/.profile.d
+    state: directory
+
+- name: Add Starship to ~/.profile.d
+  ansible.builtin.copy:
+    src: 99_starship.sh
+    dest: /home/{{ user }}/.profile.d/99_starship
+    mode: 0600
+
+# Set this to allow overwriting of config in easy way
+# export STARSHIP_CONFIG=~/.starship/config.toml
