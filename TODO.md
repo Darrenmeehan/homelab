@@ -2,20 +2,26 @@
 - How to bootstrap new sever
     - On F34 had to install git & ansible
     - and vim
+    - Change from running locally to running from a central location.
 - Use Ansible Vault for secrets
 - Clean up roles, removing defaulted files
 - Fedora support
 - Lint
 - Add precommit hooks
 
-- Setup Prometheus
-- Setup Wiregaurd
-- Setup Matrix
+## Tools to setup
+
+[] archivebox
+[] Prometheus
+[] Wiregaurd
+[] Matrix
 - Setup RSS Reader
 - Setup Squid cache
 - Setup local DNS server
     - Need to look into options
+    https://www.redhat.com/sysadmin/bound-dns
 
+- Setup Caddy
 
 https://github.com/spantaleev/matrix-docker-ansible-deploy
 
