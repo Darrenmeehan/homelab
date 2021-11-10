@@ -1,5 +1,5 @@
 ---
-- name: "homelab Ansible playbook"
+- name: homelab ansible playbook
   hosts: 127.0.0.1
   connection: local
   # tasks:
@@ -19,5 +19,5 @@
     - archivebox
     - starship
   vars_files:
-      - "vars/common.yml"
-      - [ "vars/{{ ansible_facts['distribution'] | lower }}.yml", "vars/os_defaults.yml" ]
+      - vars/common.yml
+      - [ vars/{{ ansible_facts['distribution'] | lower }}.yml, vars/os_defaults.yml ]
