@@ -1,0 +1,15 @@
+---
+
+# sudo hostnamectl set-hostname
+
+# sudo systemctl disable systemd-resolved.service
+
+# sudo systemctl stop systemd-resolved
+
+
+# https://www.redhat.com/sysadmin/bound-dns
+name: Install
+  package:
+    name: unbound
+    state: latest
+  become: yes
