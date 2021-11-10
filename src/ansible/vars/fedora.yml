@@ -6,9 +6,11 @@ utilities:
   - nmap
 
 rust_dependancies:
+  - openssl
   - openssl-devel
   - cmake
   - "@Development Tools"
+  - perl
   # - pkg-config
   # - postgresql-client-common # Needed for zero2prod
   # - postgresql-client-12
