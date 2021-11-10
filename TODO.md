@@ -9,6 +9,9 @@
 - Lint
 - Add precommit hooks
 
+- Add cron to snapshot machine, and run Ansible at night.
+    - Need notification on status..
+
 ## Tools to setup
 
 [] archivebox
