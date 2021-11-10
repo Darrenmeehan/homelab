@@ -1,0 +1,44 @@
+---
+
+- name: install prometheus
+  package:
+    name:  golang-github-prometheus
+    state: latest
+  become: yes
+
+- name: copy over configuration
+  copy:
+    src: prometheus
+    dest: /etc/sysconfig/prometheus
+  become: yes
+
+# FIXME Setup configuration
+# FIXME Will port collide with cockpit?
+
+- name: enable prometheus service
+  ansible.builtin.service:
+    enabled: yes
+    name: prometheus
+    state: restarted
+  become: yes
+
+- name: install grafana
+  package:
+    name: grafana
+    state: latest
+  become: yes
+
+- name: enable grafana service
+  ansible.builtin.service:
+    enabled: yes
+    name: grafana-server
+    state: started
+  become: yes
+
+- name: install node_exporter
+  package:
+    name: golang-github-prometheus-node-exporter
+    state: latest
+  become: yes
+
+# FIXME Create dashboard from code
