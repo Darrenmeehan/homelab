@@ -2,10 +2,16 @@
 - name: homelab ansible playbook
   hosts: 127.0.0.1
   connection: local
-  # tasks:
   pre_tasks:
-    - name: Install required roles
+    - name: install required roles
       local_action: command ansible-galaxy install geerlingguy.postgresql cloudalchemy.node_exporter
+    - name: update cache and installed packages
+      dnf:
+        update_cache: yes
+        update_only: yes
+      when: true
+      # when:  "{{ ansible_facts[‘os_family’] }} == 'RedHat'"
+      become: yes
   roles:
     - prometheus
     - applications
@@ -20,4 +26,4 @@
     - starship
   vars_files:
       - vars/common.yml
-      - [ vars/{{ ansible_facts['distribution'] | lower }}.yml, vars/os_defaults.yml ]
+      - [ "vars/{{ ansible_facts['distribution'] | lower }}.yml", vars/os_defaults.yml ]
