@@ -30,3 +30,5 @@ This tool comes with `ansible` - FIXME which pip package does it come with?
 cd src/ansible/roles
 ansible-galaxy role init <role_name>
 ```
+
+There will likely be a lot of files that are not required, be sure to delete those that are not changed.
