@@ -13,3 +13,14 @@
     state: latest
   become: yes
   loop:  "{{ libraries }}"
+
+# FIXME Look at adding this into Ansible itself
+# https://github.com/ansible/ansible/issues/46963
+- name: Add GitHub cli repo
+  shell: dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+  become: yes
+
+- name: Install GitHub cli
+  package:
+    name: gh
+  become: yes
