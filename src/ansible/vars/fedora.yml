@@ -13,9 +13,3 @@ rust_dependancies:
   # - postgresql-client-common # Needed for zero2prod
   # - postgresql-client-12
   # - build-essential
-
-node_exporter_tls_server_config:
-  cert_file: /etc/node_exporter/certificate.pem
-  key_file: /etc/node_exporter/private.pem
-node_exporter_basic_auth_users:
-  randomuser: examplepassword 

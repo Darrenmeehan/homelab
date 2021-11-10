@@ -6,3 +6,10 @@
     state: latest
   become: yes
   loop:  "{{ utilities }}"
+
+- name: Install libraries
+  package:
+    name: "{{ item }}"
+    state: latest
+  become: yes
+  loop:  "{{ libraries }}"
