@@ -3,6 +3,7 @@
 utilities:
   - tree
   - ShellCheck
+  - nmap
 
 rust_dependancies:
   - openssl-devel
