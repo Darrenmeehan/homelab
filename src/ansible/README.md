@@ -18,7 +18,7 @@ Depending on the role, I expect to build out support for the following operating
 To run locally on a system run the following.
 
 ```commandline
-ansible-playbook --connection=local playbook.yaml -v --ask-become-pass
+ansible-playbook --connection=ssh playbook.yml -i inventory.yml -v --ask-become-pass
 ```
 
 ## Adding a new role

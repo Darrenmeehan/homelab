@@ -11,7 +11,6 @@ rust_dependencies:
   - cmake
   - "@Development Tools"
   - perl
-  - musl-gcc
   # - pkg-config
   # - postgresql-client-common # Needed for zero2prod
   # - postgresql-client-12

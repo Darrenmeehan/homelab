@@ -1,4 +1,18 @@
 # TODO
+
+- Gitlab CI
+- Recursive DNS server
+- Kanban board
+- Octoprint
+- Photoprisim
+    syncthing.net
+    https://github.com/scubajeff/lespas
+- Caddyserver reverse proxy
+    - SSO
+- Nextcloud
+- Email server
+- Paperless-NG
+
 - How to bootstrap new sever
     - On F34 had to install git & ansible
     - and vim
@@ -11,6 +25,9 @@
 
 - Add cron to snapshot machine, and run Ansible at night.
     - Need notification on status..
+
+Add custom DNS to pihole for all services behind caddy
+https://blog.mdoff.net/2019/how-add-custom-dns-entries-in-pi-hole/
 
 ## Tools to setup
 

@@ -1,0 +1,21 @@
+---
+
+- name: Ensure syncthing is installed
+  ansible.builtin.apt:
+    name:
+      - syncthing
+    state: present
+
+- name: Copy systemd service file
+  ansible.builtin.copy:
+    src: files/syncthing.service
+    dest: /etc/systemd/system/syncthing.service
+    mode: 0700
+  become: true
+
+- name: Ensure syncthing is started
+  ansible.builtin.service:
+    name: syncthing
+    state: started
+    enabled: true
+  become: true

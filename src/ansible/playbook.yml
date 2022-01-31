@@ -1,0 +1,27 @@
+# ---
+# - name: homelab ansible playbook
+#   connection: ssh
+#   pre_tasks:
+#   #   - name: install required roles
+#   #     local_action: command ansible-galaxy install geerlingguy.postgresql cloudalchemy.node_exporter
+#   #     when: ansible_facts['distribution'] != 'MacOSX'
+#     - name: update cache and installed packages
+#       dnf:
+#         update_cache: yes
+#         update_only: yes
+#       when: ansible_facts['distribution'] == 'Fedora'
+#       become: true
+#   roles:
+#     # - prometheus
+#     # - applications
+#     # - nodeexporter
+#     # FIXME Likely failing due to https://github.com/ansible/ansible/blob/870f9433655b08927200db2984cff816de43eb80/lib/ansible/utils/encrypt.py#L144
+#     # - cloudalchemy.node_exporter
+#     - rust
+#     - personalrepos
+#     # - dotfiles
+#     # - { role: docker, when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu' }
+#     # - archivebox
+#   vars_files:
+#       - vars/common.yml
+#       - [ "vars/{{ ansible_facts['distribution'] | lower }}.yml", vars/os_defaults.yml ]

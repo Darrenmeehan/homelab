@@ -1,0 +1,25 @@
+---
+
+- name: Create apps directory
+  file:
+    path: ~/apps
+    state: directory
+  become: false
+
+- name: Create photoprism directory
+  file:
+    path: ~/apps/photoprism
+    state: directory
+  become: false
+
+- name: Setup docker-compose config
+  copy:
+    src: docker-compose.yml
+    dest: ~/apps/photoprism/docker-compose.yml
+  become: false
+
+- name: Ensure photoprism is running
+  community.docker.docker_compose:
+    project_src: ~/apps/photoprism
+    build: false
+  become: false

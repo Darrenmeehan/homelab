@@ -4,7 +4,7 @@ utilities:
   - tree
   - shellcheck
 
-rust_dependancies:
+rust_dependencies:
   - libssl-dev
   - pkg-config
   - postgresql-client-common # Needed for zero2prod

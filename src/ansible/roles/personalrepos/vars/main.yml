@@ -7,6 +7,6 @@ username: darren
 github_username: Darrenmeehan
 github_repository_names:
   - zero2prod
-  - hello-word-rust-lambda
-  - terraform-provider-proxmox
+  # - hello-word-rust-lambda
+  # - terraform-provider-proxmox
   # FIXME Currently empty - scones-ie
