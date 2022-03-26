@@ -1,7 +1,7 @@
 ---
 
 - name: install prometheus
-  package:
+  ansible.builtin.package:
     name:  golang-github-prometheus
     state: latest
   become: yes

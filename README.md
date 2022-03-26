@@ -18,3 +18,11 @@ pip install ansible
 Projects that I plan to reference again in future for snippets of gold!
 
 https://github.com/spantaleev/matrix-docker-ansible-deploy
+
+
+## Adding a new VM
+
+1. Create the VM in Proxmox UI
+1. Install OS to VM using Console
+1. Use `ssh-copy-id` to upload SSH key(s)
+1. Add IP Address to `inventory.ini` file
