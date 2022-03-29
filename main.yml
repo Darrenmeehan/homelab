@@ -1,5 +1,16 @@
 ---
-- hosts: proxmox-initial
+- hosts: all
+  become: true
+  pre_tasks:
+    - name: Update packages
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+        name: "*"
+        state: latest
+      when: ansible_os_family == "Debian"
+
+- hosts: proxmox
   become: false
   vars_files:
     - default.config.yml
