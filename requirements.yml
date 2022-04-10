@@ -3,6 +3,7 @@ collections:
   - ansible.posix
   - community.docker
   - community.general
+  - maxhoesel.smallstep
 
 roles:
   - caddy_ansible.caddy_ansible
