@@ -4,3 +4,4 @@ credentials.env
 
 
 .log
+terraform-plugin-proxmox.log
