@@ -24,6 +24,7 @@
       tags: ['always']
   tasks:
     - import_tasks: tasks/access.yml
+    - import_tasks: tasks/proxmox.yml
 
 - hosts: photos
   become: true
