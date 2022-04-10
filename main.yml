@@ -26,6 +26,20 @@
     - import_tasks: tasks/access.yml
     - import_tasks: tasks/proxmox.yml
 
+- hosts: k0s
+  become: false
+  vars_files:
+    - default.config.yml
+  pre_tasks:
+    - name: Include playbook configuration
+      include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+        - "{{ playbook_dir }}/{{ lookup('env','USER') }}.yml"
+      tags: ['always']
+  # tasks:
+    # - import_tasks: tasks/docker.yml
+  roles:
 - hosts: photos
   become: true
   vars_files:
