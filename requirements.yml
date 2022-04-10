@@ -7,3 +7,5 @@ collections:
 roles:
   - caddy_ansible.caddy_ansible
   - cloudalchemy.prometheus
+  # FIXME Does not support PVE 7
+  # - ironicbadger.ansible_role_proxmox_nag_removal
