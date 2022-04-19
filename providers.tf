@@ -5,6 +5,14 @@ terraform {
       version = "2.9.6"
     }
   }
+
+   cloud {
+    organization = "home-network"
+
+    workspaces {
+      name = "main"
+    }
+  }
 }
 
 provider "proxmox" {
