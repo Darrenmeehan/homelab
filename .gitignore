@@ -1,7 +1,10 @@
+# Secrets
 credentials.env
+secrets.pve.auto.pkrvars.hcl
 
 .terraform/
 
-
+# Logs
 .log
 terraform-plugin-proxmox.log
+crash.log
