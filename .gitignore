@@ -1,6 +1,7 @@
 # Secrets
 credentials.env
 secrets.pve.auto.pkrvars.hcl
+secrets.auto.tfvars
 
 .terraform/
 
