@@ -2,7 +2,7 @@ resource "proxmox_vm_qemu" "certs_server" {
   count       = 1
   name        = "certs-${count.index + 1}"
   target_node = "pve"
-  clone = "ubuntu-2110-template"
+  clone = "ubuntu-2204-template"
   agent    = 1
   os_type  = "cloud-init"
   cores    = 2
