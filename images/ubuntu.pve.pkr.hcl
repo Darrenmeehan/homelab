@@ -70,4 +70,11 @@ source "proxmox" "test_template" {
 # https://www.packer.io/docs/templates/hcl_templates/blocks/build
 build {
   sources = ["source.proxmox.test_template"]
+  provisioner "ansible" {
+    playbook_file = "./playbook.yml"
+    extra_arguments = [
+      "--extra-vars",
+      "ansible_become_pass=vagrant"
+      ]
+  }
 }

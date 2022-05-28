@@ -1,0 +1,12 @@
+---
+- name: 'Base Image Provisioning'
+  hosts: default
+  become: true
+
+  tasks:
+  # Probably do not need this in Ansible
+  # simple example for now
+    - name: Update all packages
+      package:
+        name: '*'
+        state: latest

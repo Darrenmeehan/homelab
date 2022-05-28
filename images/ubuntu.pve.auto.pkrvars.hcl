@@ -5,4 +5,4 @@ memory = 2048
 sockets = 1
 proxmox_node = "pve"
 template_name = "ubuntu-2204-template"
-vm_id = 9001
+vm_id = 9002
