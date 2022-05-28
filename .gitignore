@@ -8,3 +8,6 @@ secrets.pve.auto.pkrvars.hcl
 .log
 terraform-plugin-proxmox.log
 crash.log
+
+# Machine Images 
+*.iso
