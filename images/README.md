@@ -10,7 +10,7 @@ Builds VM templates for Proxmox, using Packer.
 - [] Improve documentation
 - [] Better figure out out CloudInit and autoinstall
 - [] Use Image in Terraform
-- [] Use Ansible provisioner for usecase specific images.
+- [] Use Ansible provisioner for use-case specific images.
 
 ## References
 
