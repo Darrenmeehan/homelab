@@ -1,4 +1,5 @@
 resource "proxmox_vm_qemu" "certs_server" {
+  desc = "Private PKI"
   count       = 1
   name        = "certs-${count.index + 1}"
   target_node = "pve"
@@ -29,13 +30,7 @@ resource "proxmox_vm_qemu" "certs_server" {
       network,
     ]
   }
-
-  # the ${count.index + 1} thing appends text to the end of the ip address
-  # in this case, since we are only adding a single VM, the IP will
-  # be 10.98.1.91 since count.index starts at 0. this is how you can create
-  # multiple VMs and have an IP assigned to each (.91, .92, .93, etc.)
-  ipconfig0 = "ip=192.168.8.8${count.index + 1}/24,gw=192.168.8.1"
-
+  ipconfig0 = "ip=dhcp"
   # sshkeys set using variables. the variable contains the text of the key.
   sshkeys = <<EOF
   ${var.ssh_key}
@@ -43,6 +38,7 @@ resource "proxmox_vm_qemu" "certs_server" {
 }
 
 resource "proxmox_vm_qemu" "octoprint_server" {
+  desc = "3D Printing Management"
   count       = 1
   name        = "octoprint"
   target_node = "pve"
@@ -73,13 +69,7 @@ resource "proxmox_vm_qemu" "octoprint_server" {
       network,
     ]
   }
-
-  # the ${count.index + 1} thing appends text to the end of the ip address
-  # in this case, since we are only adding a single VM, the IP will
-  # be 10.98.1.91 since count.index starts at 0. this is how you can create
-  # multiple VMs and have an IP assigned to each (.91, .92, .93, etc.)
-  ipconfig0 = "ip=192.168.8.88/24,gw=192.168.8.1"
-
+  ipconfig0 = "ip=dhcp"
   # sshkeys set using variables. the variable contains the text of the key.
   sshkeys = <<EOF
   ${var.ssh_key}
@@ -88,6 +78,7 @@ resource "proxmox_vm_qemu" "octoprint_server" {
 
 
 resource "proxmox_vm_qemu" "dev_server" {
+  desc = "Rust development machine"
   count       = 1
   name        = "dev-${count.index + 1}"
   target_node = "pve"
@@ -118,13 +109,7 @@ resource "proxmox_vm_qemu" "dev_server" {
       network,
     ]
   }
-
-  # the ${count.index + 1} thing appends text to the end of the ip address
-  # in this case, since we are only adding a single VM, the IP will
-  # be 10.98.1.91 since count.index starts at 0. this is how you can create
-  # multiple VMs and have an IP assigned to each (.91, .92, .93, etc.)
-  ipconfig0 = "ip=192.168.8.7${count.index + 1}/24,gw=192.168.8.1"
-
+  ipconfig0 = "ip=dhcp"
   # sshkeys set using variables. the variable contains the text of the key.
   sshkeys = <<EOF
   ${var.ssh_key}
