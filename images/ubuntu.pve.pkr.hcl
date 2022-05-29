@@ -63,7 +63,7 @@ source "proxmox" "test_template" {
   username             = "${var.username}"
   token                = "${var.token}"
   vm_id                = "${var.vm_id}"
-  vm_name              = "${var.template_name}"
+  vm_name              = "${var.template_name}-${var.vm_id}"
 }
 # a build block invokes sources and runs provisioning steps on them. The
 # documentation for build blocks can be found here:
