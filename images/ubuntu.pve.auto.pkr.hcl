@@ -3,10 +3,6 @@ variable "locale" {
   default = "en_US"
 }
 
-variable "hostname" {
-  type    = string
-}
-
 variable "ssh_username" {
   type    = string
 }

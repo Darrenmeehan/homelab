@@ -1,4 +1,3 @@
-hostname = "localhost"
 ssh_username = "vagrant"
 ssh_password = "vagrant"
 memory = 2048
