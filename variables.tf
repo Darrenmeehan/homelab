@@ -1,5 +1,5 @@
 variable "proxmox_hostname" {
-  default = "192.168.8.215"
+  default = ""
 }
 
 variable "proxmox_port" {
