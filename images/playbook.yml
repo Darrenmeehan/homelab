@@ -10,3 +10,6 @@
       package:
         name: '*'
         state: latest
+    - name: Set hostname
+      ansible.builtin.hostname:
+        name: "{{ hostname }}"

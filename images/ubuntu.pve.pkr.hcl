@@ -74,7 +74,7 @@ build {
     playbook_file = "./playbook.yml"
     extra_arguments = [
       "--extra-vars",
-      "ansible_become_pass=vagrant"
+      "ansible_become_pass=vagrant hostname=base-image"
       ]
   }
 }
