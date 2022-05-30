@@ -9,7 +9,7 @@
     create_home: yes
 
 - name: Create sudoers.d files
-  copy:
+  ansible.builtin.copy:
     src: sudoers/darren
     dest: /etc/sudoers.d
     owner: root
