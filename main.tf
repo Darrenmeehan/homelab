@@ -1,17 +1,17 @@
 resource "proxmox_vm_qemu" "certs_server" {
-  desc = "Private PKI"
+  desc        = "Private PKI"
   count       = 1
   name        = "certs-${count.index + 1}"
   target_node = "pve"
-  clone = "ubuntu-2204-template-9005"
-  agent    = 1
-  os_type  = "cloud-init"
-  cores    = 2
-  sockets  = 1
-  cpu      = "host"
-  memory   = 2048
-  scsihw   = "virtio-scsi-pci"
-  bootdisk = "scsi0"
+  clone       = "ubuntu-2204-template-9005"
+  agent       = 1
+  os_type     = "cloud-init"
+  cores       = 2
+  sockets     = 1
+  cpu         = "host"
+  memory      = 2048
+  scsihw      = "virtio-scsi-pci"
+  bootdisk    = "scsi0"
   disk {
     slot     = 0
     size     = "10G"
@@ -38,19 +38,19 @@ resource "proxmox_vm_qemu" "certs_server" {
 }
 
 resource "proxmox_vm_qemu" "octoprint_server" {
-  desc = "3D Printing Management"
+  desc        = "3D Printing Management"
   count       = 1
   name        = "octoprint"
   target_node = "pve"
-  clone = "ubuntu-2204-template-9005"
-  agent    = 1
-  os_type  = "cloud-init"
-  cores    = 2
-  sockets  = 1
-  cpu      = "host"
-  memory   = 2048
-  scsihw   = "virtio-scsi-pci"
-  bootdisk = "scsi0"
+  clone       = "ubuntu-2204-template-9005"
+  agent       = 1
+  os_type     = "cloud-init"
+  cores       = 2
+  sockets     = 1
+  cpu         = "host"
+  memory      = 2048
+  scsihw      = "virtio-scsi-pci"
+  bootdisk    = "scsi0"
   disk {
     slot     = 0
     size     = "10G"
@@ -77,21 +77,21 @@ resource "proxmox_vm_qemu" "octoprint_server" {
 }
 
 resource "proxmox_vm_qemu" "dev_server" {
-  desc = "Rust development machine"
+  desc        = "Rust development machine"
   count       = 1
   name        = "dev-${count.index + 1}"
   target_node = "pve"
-  clone = "ubuntu-2204-template-9005"
-  agent    = 1
-  os_type  = "cloud-init"
-  cores    = 4
-  sockets  = 2
-  cpu      = "host"
-  memory   = 8192
-  scsihw   = "virtio-scsi-pci"
-  bootdisk = "scsi0"
+  clone       = "ubuntu-2204-template-9005"
+  agent       = 1
+  os_type     = "cloud-init"
+  cores       = 4
+  sockets     = 2
+  cpu         = "host"
+  memory      = 8192
+  scsihw      = "virtio-scsi-pci"
+  bootdisk    = "scsi0"
   disk {
-    slot     = 0
+    slot = 0
     # FIXME Change to 100G
     size     = "10G"
     type     = "scsi"
@@ -117,19 +117,19 @@ resource "proxmox_vm_qemu" "dev_server" {
 }
 
 resource "proxmox_vm_qemu" "pihole" {
-  desc = "Network-wide Ad Blocking"
+  desc        = "Network-wide Ad Blocking"
   count       = 1
   name        = "pihole-${count.index + 1}"
   target_node = "pve"
-  clone = "ubuntu-2204-template-9005"
-  agent    = 1
-  os_type  = "cloud-init"
-  cores    = 2
-  sockets  = 1
-  cpu      = "host"
-  memory   = 2048
-  scsihw   = "virtio-scsi-pci"
-  bootdisk = "scsi0"
+  clone       = "ubuntu-2204-template-9005"
+  agent       = 1
+  os_type     = "cloud-init"
+  cores       = 2
+  sockets     = 1
+  cpu         = "host"
+  memory      = 2048
+  scsihw      = "virtio-scsi-pci"
+  bootdisk    = "scsi0"
   disk {
     slot     = 0
     size     = "10G"
@@ -156,19 +156,19 @@ resource "proxmox_vm_qemu" "pihole" {
 }
 
 resource "proxmox_vm_qemu" "photos" {
-  desc = "Photo Manager"
+  desc        = "Photo Manager"
   count       = 1
   name        = "photos-${count.index + 1}"
   target_node = "pve"
-  clone = "ubuntu-2204-template-9005"
-  agent    = 1
-  os_type  = "cloud-init"
-  cores    = 2
-  sockets  = 1
-  cpu      = "host"
-  memory   = 2048
-  scsihw   = "virtio-scsi-pci"
-  bootdisk = "scsi0"
+  clone       = "ubuntu-2204-template-9005"
+  agent       = 1
+  os_type     = "cloud-init"
+  cores       = 2
+  sockets     = 1
+  cpu         = "host"
+  memory      = 2048
+  scsihw      = "virtio-scsi-pci"
+  bootdisk    = "scsi0"
   disk {
     slot     = 0
     size     = "50G"
@@ -195,19 +195,19 @@ resource "proxmox_vm_qemu" "photos" {
 }
 
 resource "proxmox_vm_qemu" "k0s" {
-  desc = "Container home, not actually k0s"
+  desc        = "Container home, not actually k0s"
   count       = 1
   name        = "k0s-${count.index + 1}"
   target_node = "pve"
-  clone = "ubuntu-2204-template-9005"
-  agent    = 1
-  os_type  = "cloud-init"
-  cores    = 2
-  sockets  = 1
-  cpu      = "host"
-  memory   = 2048
-  scsihw   = "virtio-scsi-pci"
-  bootdisk = "scsi0"
+  clone       = "ubuntu-2204-template-9005"
+  agent       = 1
+  os_type     = "cloud-init"
+  cores       = 2
+  sockets     = 1
+  cpu         = "host"
+  memory      = 2048
+  scsihw      = "virtio-scsi-pci"
+  bootdisk    = "scsi0"
   disk {
     slot     = 0
     size     = "20G"
