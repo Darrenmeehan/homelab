@@ -10,6 +10,13 @@
       package:
         name: '*'
         state: latest
+
     - name: Set hostname
       ansible.builtin.hostname:
         name: "{{ hostname }}"
+
+    - name: Set authorized keys
+      ansible.posix.authorized_key:
+        user: vagrant
+        state: present
+        key: "{{ lookup('file', '/Users/darren/.ssh/general.pub') }}"
