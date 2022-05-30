@@ -1,17 +1,40 @@
 # TODO
 
-- Gitlab CI
-- Recursive DNS server
-- Kanban board
-- Octoprint
-- Photoprisim
+[] Octoprint
+[] Home Assistant
+[] pi-hole
+[] Paperless-NG
+[] Photoprisim
+[] Nextcloud
+[] Gitlab CI
+[] Recursive DNS server
+[] Kanban board
+[] archivebox
+[] Prometheus
+[] Wireguard
+[] Matrix
+[] RSS Reader
+[] Squid cache
+[] local DNS server
+    - Need to look into options
+    https://www.redhat.com/sysadmin/bound-dns
+
+- Setup Caddy
     syncthing.net
     https://github.com/scubajeff/lespas
 - Caddyserver reverse proxy
     - SSO
-- Nextcloud
+
 - Email server
-- Paperless-NG
+
+
+## Terraform
+
+[] Add VM IP addresses to TF output
+[] Add VM MAC addresses to TF output
+[] Document usage of TF
+[] Cleanup VM ID generation
+[] Force TF to use local execution.
 
 - How to bootstrap new sever
     - On F34 had to install git & ansible
@@ -31,17 +54,7 @@ https://blog.mdoff.net/2019/how-add-custom-dns-entries-in-pi-hole/
 
 ## Tools to setup
 
-[] archivebox
-[] Prometheus
-[] Wiregaurd
-[] Matrix
-- Setup RSS Reader
-- Setup Squid cache
-- Setup local DNS server
-    - Need to look into options
-    https://www.redhat.com/sysadmin/bound-dns
 
-- Setup Caddy
 
 https://github.com/spantaleev/matrix-docker-ansible-deploy
 
