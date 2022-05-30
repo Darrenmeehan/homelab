@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/prometheus.json": "file:///Users/darren/code/homelab/tasks/prometheus.yml"
+    }
+}
