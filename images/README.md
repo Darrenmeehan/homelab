@@ -2,6 +2,14 @@
 
 Builds VM templates for Proxmox, using Packer.
 
+## Usage
+
+From within this directory, run the following.
+
+```shell
+PACKER_LOG=1 packer build .
+```
+
 ## TODO
 
 - [] Remove hardcoded ID
