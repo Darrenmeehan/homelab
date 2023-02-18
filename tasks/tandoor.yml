@@ -1,0 +1,25 @@
+---
+
+- name: Create directory
+  file:
+    path: ~/tandoor
+    state: directory
+  become: false
+
+- name: Setup docker-compose config
+  copy:
+    src: tandoor/docker-compose.yml
+    dest: ~/tandoor/docker-compose.yml
+  become: false
+
+- name: Setup docker-compose config
+  copy:
+    src: tandoor/.env
+    dest: ~/tandoor/.env
+  become: false
+
+- name: Ensure application is running
+  community.docker.docker_compose:
+    project_src: ~/tandoor
+    build: false
+  become: false

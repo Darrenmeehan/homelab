@@ -12,3 +12,7 @@ crash.log
 
 # Machine Images 
 *.iso
+
+
+.env
+images/secrets.pve.auto.pkvars.hcl

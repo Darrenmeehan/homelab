@@ -1,0 +1,19 @@
+---
+
+- name: Create directory
+  file:
+    path: ~/nextcloud
+    state: directory
+  become: false
+
+- name: Setup docker-compose config
+  copy:
+    src: nextcloud/docker-compose.yml
+    dest: ~/nextcloud/docker-compose.yml
+  become: false
+
+- name: Ensure application is running
+  community.docker.docker_compose:
+    project_src: ~/nextcloud
+    build: false
+  become: false

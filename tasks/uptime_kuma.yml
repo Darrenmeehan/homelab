@@ -1,0 +1,19 @@
+---
+
+- name: Create directory
+  file:
+    path: ~/uptime-kuma
+    state: directory
+  become: false
+
+- name: Setup docker-compose config
+  copy:
+    src: uptime-kuma/docker-compose.yml
+    dest: ~/uptime-kuma/docker-compose.yml
+  become: false
+
+- name: Ensure application is running
+  community.docker.docker_compose:
+    project_src: ~/uptime-kuma
+    build: false
+  become: false

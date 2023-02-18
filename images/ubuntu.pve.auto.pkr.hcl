@@ -27,7 +27,7 @@ variable "disk_size" {
 
 variable "iso_file" {
   type    = string
-  default = "local:iso/ubuntu-22.04-live-server-amd64.iso"
+  default = "local:iso/ubuntu-22.04.1-live-server-amd64.iso"
 }
 
 variable "memory" {

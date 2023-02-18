@@ -1,0 +1,32 @@
+---
+
+- name: Create directory
+  file:
+    path: ~/paperless
+    state: directory
+  become: false
+
+- name: Setup docker-compose config
+  copy:
+    src: paperless-ngx/docker-compose.sqlite.yml
+    dest: ~/paperless/docker-compose.yml
+  become: false
+
+- name: Setup docker-compose config
+  copy:
+    src: paperless-ngx/docker-compose.env
+    dest: ~/paperless/docker-compose.env
+  become: false
+
+- name: Setup docker-compose config
+  copy:
+    src: paperless-ngx/.env
+    dest: ~/paperless/.env
+  become: false
+
+- name: Ensure application is running
+  community.docker.docker_compose:
+    project_src: ~/paperless
+    build: false
+  become: false
+

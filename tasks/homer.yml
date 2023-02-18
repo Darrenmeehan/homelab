@@ -1,0 +1,32 @@
+---
+
+- name: Create directory
+  file:
+    path: ~/homer
+    state: directory
+  become: false
+
+- name: Create assets directory
+  file:
+    path: ~/homer/assets
+    state: directory
+  become: false
+
+- name: Setup docker-compose config
+  copy:
+    src: homer/docker-compose.yml
+    dest: ~/homer/docker-compose.yml
+  become: false
+
+- name: Setup config
+  copy:
+    src: homer/config.yml
+    dest: ~/homer/assets/config.yml
+  become: false
+
+- name: Ensure application is running
+  community.docker.docker_compose:
+    project_src: ~/homer
+    build: false
+  become: false
+

@@ -4,6 +4,7 @@
   ansible.builtin.user:
     name: "{{ username }}"
     comment: Darren Meehan
+    # FIXME How to add password. Read in from private file
     password: $6$3DYXZFi4sxn.RIZD$xYpX50gR1kotbnoFi0gQ3auV7VKYl7UE0S72Jlo8WSawZYZoeSmygkOMnXJCJDHBsajWvWHgXzAxED1mjWTHk.
     update_password: always
     create_home: yes

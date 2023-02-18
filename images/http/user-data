@@ -12,6 +12,7 @@ autoinstall:
     - systemctl stop ssh
   ssh:
     install-server: true
+    allow-pw: yes
   packages:
     - qemu-guest-agent
   runcmd:

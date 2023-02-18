@@ -2,13 +2,27 @@
 
 Builds VM templates for Proxmox, using Packer.
 
-## Usage
+## Preparation
 
-From within this directory, run the following.
+Add API token
 
 ```shell
+cp sample.secrets.pve.auto.pkvars.hcl secrets.pve.auto.pkvars.hcl
+```
+ansible-galaxy collection install ansible.posix
+
+## Usage
+
+From within this directory, run the following
+
+```shell
+packer init -upgrade .
 PACKER_LOG=1 packer build .
 ```
+
+## Debugging
+
+View /var/log/pveproxy/access.log to view any issues with accessing the PVE API which is what Packer is using to build the base images.
 
 ## TODO
 
